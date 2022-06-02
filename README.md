@@ -1,16 +1,12 @@
-# Shop UI
+# React Seed 2022
 
-UI for the shop platform
+A seed project to start a react app
 
-## TODO
+## Setup and development
 
-- home page shows some products
-- search bar in header that you can use no matter what page you're on. using it takes you back to the home page to show results I guess
-- about page?
-- color pallette
-- sign in and sign up
-- shopping cart for guest and for signed in user
-  - if I put things in cart, then sign in, and already have things in cart, do I just merge them and keep all items in signed-in cart?
-- page to create a shop
-- page for shop owner to add product listing
-- page for shop owner to see and edit existing product listings
+- clone this project and rename it to whatever your new project name is
+- create a new git repository
+- run `git remote set-url origin <yourNewRepositoryUrl>` to point your project at your new git repository
+- run `npm i` to install the package dependencies
+- run `npm start` to spin up the project.
+- Update this README and the package.json package name. Happy coding!

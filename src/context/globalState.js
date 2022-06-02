@@ -1,22 +1,23 @@
 import React, { createContext, useReducer } from "react";
 
 const initialState = {
+  user: null,
   modalToDisplay: null,
 };
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case "CLOSE_MODAL": {
+    case "USER_LOGGED_IN": {
       return {
         ...state,
-        modalToDisplay: null,
+        user: action.value,
       };
     }
 
-    case "SHOW_MODAL": {
+    case "USER_LOGGED_OUT": {
       return {
         ...state,
-        modalToDisplay: action.value,
+        user: null,
       };
     }
 
@@ -25,14 +26,14 @@ const reducer = (state, action) => {
   }
 };
 
-export const modalContext = createContext(initialState);
+export const globalContext = createContext(initialState);
 
-export const ModalStore = ({ children }) => {
+export const GlobalStore = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
-    <modalContext.Provider value={{ state, dispatch }}>
+    <globalContext.Provider value={{ state, dispatch }}>
       {children}
-    </modalContext.Provider>
+    </globalContext.Provider>
   );
 };
